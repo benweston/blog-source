@@ -1,0 +1,20 @@
+name: Publish to Hashnode
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - uses: Hashnode/publish-github-action@v1
+        with:
+          access-token: ${{ secrets.HASHNODE_PAT }}
+          # Replace with your publication host, or use publication-id instead.
+          publication-host: YOUR_BLOG.hashnode.dev
+          posts-directory: posts
