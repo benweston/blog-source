@@ -1,0 +1,169 @@
+# ==============================================================================
+# Git Ignore Rules: blog-source
+# Standards: POSIX / Linux, Sublime Text, Direnv, Cloud & Local Secrets
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# 1. Secrets, Credentials & Local Environment
+# ------------------------------------------------------------------------------
+# Environment configuration & Direnv
+.direnv/
+.envrc
+.env
+.env.*
+.env*.local
+*.env
+*.env.*
+env-variables.txt
+
+# Preserve public environment templates and examples
+!.env.example
+!.env.*.example
+!.envrc.example
+
+# SSH keys, configs & identity stores
+**/.ssh/id_*
+**/.ssh/*_id_*
+**/.ssh/known_hosts
+**/.ssh/config
+id_rsa*
+id_ecdsa*
+id_ed25519*
+
+# Certificates, private keys & cryptographic keystores
+*.pem
+*.key
+*.pkcs8
+*.p12
+*.pfx
+*.crt
+*.cer
+*.der
+*.pub
+
+# GPG & Secret Keyrings
+secring.*
+*.gpg
+*.asc
+
+# Cloud CLI credentials & tokens
+doctl/
+*.do_token
+.kube/config
+*credentials*.json
+*service-account*.json
+*-key.json
+client_secret*.json
+
+# ------------------------------------------------------------------------------
+# 2. Editor & IDE (Sublime Text)
+# ------------------------------------------------------------------------------
+# User workspace states (cursor locations, layout, active tabs)
+*.sublime-workspace
+
+# Project configuration (uncomment if project file is strictly private)
+*.sublime-project
+
+# Package Control runtime artifacts & certificate bundles
+Package Control.last-run
+Package Control.ca-list
+Package Control.ca-bundle
+Package Control.system-ca-bundle
+Package Control.merged-ca-bundle
+Package Control.user-ca-bundle
+Package Control.cache/
+Package Control.ca-certs/
+oscrypto-ca-bundle.crt
+
+# Sublime cache, session data & sensitive plugin settings
+*.tmlanguage.cache
+*.tmPreferences.cache
+*.stTheme.cache
+*.cache
+bh_unicode_properties.cache
+GitHub.sublime-settings
+sftp-config.json
+sftp-config-alt*.json
+
+# ------------------------------------------------------------------------------
+# 3. Operating System & Filesystem (Linux / POSIX)
+# ------------------------------------------------------------------------------
+# Editor recovery, lock files & auto-saves
+*~
+*.swp
+*.swo
+.#*
+\#*#
+
+# Network & filesystem artifacts
+.fuse_hidden*
+.nfs*
+
+# Desktop environment metadata, thumbnails & trash
+.directory
+.Trash-*
+.thumbnails/
+
+# Process dumps
+core
+core.*
+vgcore.*
+
+# ------------------------------------------------------------------------------
+# 4. Local Runtime, Logs & Diagnostics
+# ------------------------------------------------------------------------------
+# Anchored ephemeral root directories (prevents matching nested source folders)
+/tmp/
+/temp/
+
+# Application runtime artifacts
+*.log
+*.tmp
+*.out
+*.pid
+*.seed
+*.retry
+
+# Created by https://www.toptal.com/developers/gitignore/api/macos
+# Edit at https://www.toptal.com/developers/gitignore?templates=macos
+
+### macOS ###
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon must end with two \r
+Icon
+
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+### macOS Patch ###
+# iCloud generated files
+*.icloud
+
+# End of https://www.toptal.com/developers/gitignore/api/macos
+
+# ------------------------------------------------------------------------------
+# 5. Additional IDEs & Local Tooling
+# ------------------------------------------------------------------------------
+.vscode/
+.idea/
