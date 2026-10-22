@@ -39,7 +39,7 @@ blog-source/
 │   ├── ISSUE_TEMPLATE/     # Standardised GitHub issue templates (if applicable)
 │   └── workflows/          # GitHub Actions pipelines (publish-to-hashnode.yml)
 ├── assets/                 # Repository-level assets (banners, diagrams, screenshots)
-│   ├── banners/            # Header and promotional banners (main-banner.png)
+│   ├── banners/            # Repo header (main-banner.png) & article cover banners (<slug>.png)
 │   ├── diagrams/           # Architecture diagrams and schematics
 │   ├── icons/              # Logos, badges, and iconography
 │   ├── misc/               # Miscellaneous asset files
@@ -65,7 +65,7 @@ title: How I built my blog
 slug: how-i-built-my-blog
 subtitle: A tour of the stack
 tags: linux, bash, cloud
-cover: /assets/banners/post-cover.png
+cover: /assets/banners/how-i-built-my-blog.png
 seriesSlug: enterprise-linux
 canonical: https://example.com/original
 seoTitle: How I built my blog
@@ -82,6 +82,7 @@ hideFromCommunity: false
 
 ### Key Publishing Mechanics
 - **Create vs Update (`slug`):** `title` is required, and `slug` serves as the immutable update key linking the Markdown file to its published Hashnode post across pushes. Keep `slug` stable once published.
+- **Article Cover Banners (`assets/banners/`):** Store article cover images flat in `assets/banners/` named after the post's `slug` (e.g. `assets/banners/<slug>.png`, recommended `1600 × 840 px`) and reference them in frontmatter as `cover: /assets/banners/<slug>.png`. Keep `assets/banners/main-banner.png` reserved for the repository header banner.
 - **Images & CDN Upload:** Relative image paths (e.g. `./images/diagram.png`) resolve relative to the Markdown file, while a leading `/` (e.g. `/assets/diagrams/arch.png`) resolves from the repository root. Supported formats: `jpg`, `png`, `gif`, `webp`, `avif` (up to 8 MB each; **SVG is not supported** by Hashnode CDN upload). Absolute URLs pass through untouched.
 - **Drafts (`saveAsDraft`):** Setting `saveAsDraft: true` creates a draft for new posts. Re-pushing the same file while still marked as a draft creates another draft; remove the flag or set `saveAsDraft: false` when ready to publish.
 - **Skipping Posts (`ignorePost`):** Set `ignorePost: true` to instruct the GitHub Action to skip processing a file in `posts/`.

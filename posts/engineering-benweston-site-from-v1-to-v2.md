@@ -3,7 +3,7 @@ title: "Engineering benweston.site: From Zero-Runtime Foundations (v1.0.0) to a 
 subtitle: "Building a zero-compute edge portfolio with Astro 5, Google Cloud, Trunk-Based CI/CD, and a decoupled Git-driven blog pipeline"
 slug: engineering-benweston-site-from-v1-to-v2
 tags: google-cloud, cicd, github-actions, web-development, platform-engineering
-cover: /assets/banners/main-banner.png
+cover: /assets/banners/engineering-benweston-site-from-v1-to-v2.png
 seoTitle: "Engineering benweston.site: From v1.0.0 to v2.0.0"
 seoDescription: "A deep dive into the engineering journey behind benweston.site, covering Astro 5 static generation, Google Cloud Edge delivery, Trunk-Based CI/CD, and a decoupled Git-to-Hashnode blog pipeline."
 enableToc: true
