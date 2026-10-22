@@ -6,7 +6,7 @@ tags: google-cloud, cicd, github-actions, web-development, platform-engineering
 seoTitle: "Engineering benweston.site: From v1.0.0 to v2.0.0"
 seoDescription: "A deep dive into the engineering journey behind benweston.site, covering Astro 5 static generation, Google Cloud Edge delivery, Trunk-Based CI/CD, and a decoupled Git-to-Hashnode blog pipeline."
 enableToc: true
-saveAsDraft: true
+saveAsDraft: false
 ignorePost: false
 ---
 
@@ -67,9 +67,15 @@ We refactored the site around a unified layout template (`PageLayout.astro`) enf
 A pivotal architectural decision in `v2.0.0` was how to host long-form technical writing. Rather than coupling every blog post edit to an application release of `app-portfolio`, we decoupled the blog onto its own dedicated subdomain - [`blog.benweston.site`](https://blog.benweston.site/) - backed by a two-way GitHub pipeline:   
 
 ```text
-[ benweston/blog-source ]  --(GitHub Actions)-->  [ Hashnode Edge (blog.benweston.site) ]
-                                                            |
-[ benweston/blog-backup ]  <--(Native GitHub Sync)----------+
+[ benweston/blog-source ]
+           |
+           |  (GitHub Actions)
+           v
+[ Hashnode Edge (blog.benweston.site) ]
+           |
+           |  (Native GitHub Sync)
+           v
+[ benweston/blog-backup ]
 ```
 
 1. **Outbound Git Authoring ([`benweston/blog-source`](https://github.com/benweston/blog-source)):** Articles are authored in Markdown with YAML frontmatter in Git and published automatically to Hashnode via GitHub Actions (`Hashnode/publish-github-action@v1`).   
