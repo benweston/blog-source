@@ -4,6 +4,7 @@ subtitle: An example subtitle
 slug: my-first-post-published-from-github
 tags: general-programming, developer-blogging
 saveAsDraft: true
+ignorePost: true
 ---
 
 This post lives as a markdown file in a GitHub repository. Pushing it to the main branch published it to Hashnode.
