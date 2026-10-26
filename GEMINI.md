@@ -1,7 +1,7 @@
 # Blog Source (`blog.benweston.site`) - Agent Instructions & Project Context
 
 ## Project Overview
-This repository (`benweston/blog-source`) is the canonical outbound authoring source for Ben Weston's technical writing hub at [blog.benweston.site](https://blog.benweston.site/), paired with the main engineering portfolio at [benweston.site](https://benweston.site/) (`benweston/app-portfolio`). Articles are authored as Markdown files with YAML frontmatter and published automatically to Hashnode via GitHub Actions.
+This repository (`benweston/blog-source`) is the canonical outbound authoring source for Ben Weston's technical writing hub at [blog.benweston.site](https://blog.benweston.site/), paired with the main engineering portfolio at [benweston.site](https://benweston.site/) (`benweston/app-portfolio`). Articles are authored in Markdown and published automatically to Hashnode via GitHub Actions.
 
 ---
 
@@ -21,13 +21,13 @@ Articles and technical series align with the three-tier engineering workflow def
 
 The technical writing hub is intentionally decoupled from `app-portfolio` on its own dedicated subdomain (`blog.benweston.site`), backed by a two-way GitHub pipeline:
 
-- **Outbound Source (`benweston/blog-source`):** Markdown articles with YAML frontmatter are authored in `posts/` and published or updated automatically on Hashnode via `.github/workflows/publish-to-hashnode.yml` (`Hashnode/publish-github-action@v1`).
+- **Outbound Source (`benweston/blog-source`):** Articles are authored in Markdown in `posts/` and published or updated automatically on Hashnode via `.github/workflows/publish-to-hashnode.yml` (`Hashnode/publish-github-action@v1`).
 - **Inbound Backup (`benweston/blog-backup`):** Hashnode's native GitHub integration synchronises published posts back to a dedicated backup repository.
 - **Portfolio Integration (`benweston.site/blog`):** Visitors navigating to `benweston.site/blog` (or clicking **Blog ↗** in the portfolio header) are routed via HTTP `301` edge redirects in `app-portfolio` to `https://blog.benweston.site`.
 - **Custom Domain & Edge Routing:**
   - `CNAME` record `blog` → `hashnode.network` managed in Squarespace DNS.
   - `TXT` verification record `_vercel` verifies domain ownership on Hashnode's edge router.
-- **Future Transition Path (`app-blog`):** Because all articles are authored as standard Markdown with YAML frontmatter in Git, migrating to a self-hosted Astro application (`app-blog` on Firebase Hosting) requires zero content rewriting — only repointing the `blog` DNS record.
+- **Future Transition Path (`app-blog`):** Because all articles are authored in standard Markdown in Git, migrating to a self-hosted Astro application (`app-blog` on Firebase Hosting) requires zero content rewriting — only repointing the `blog` DNS record.
 
 ---
 
@@ -49,7 +49,9 @@ blog-source/
 │   ├── README.md           # Documentation index
 │   └── wiki/               # Canonical Markdown source for GitHub Wiki (if applicable)
 ├── posts/                  # Canonical Markdown blog posts published to Hashnode
-│   └── example-post.md     # Template/example post with YAML frontmatter
+│   ├── engineering-benweston-site-from-v1-to-v2.md # Published v1.0.0 to v2.0.0 engineering post
+│   ├── example-post.md     # Template/example Markdown post
+│   └── README.md           # Posts directory index
 ├── .gitignore              # Git ignore rules for POSIX/Linux, Sublime Text, and secrets
 ├── GEMINI.md               # Persistent agent guidelines and project context
 └── README.md               # Repository overview and documentation links
