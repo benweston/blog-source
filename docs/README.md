@@ -15,13 +15,3 @@
 > Repository documentation, authoring specifications, and publishing guides.   
 
 </div>
-
-## Contents
-
-<div align="justify">
-
-| Document | Description |
-| :--- | :--- |
-| [`authoring-and-publishing.md`](./authoring-and-publishing.md) | Setup instructions, Markdown frontmatter specification, and Hashnode GitHub Action publishing mechanics. |
-
-</div>
