@@ -28,6 +28,6 @@ Setup instructions, frontmatter specifications, and publishing workflows are doc
 
 <div align="justify">
 
-The `blog-source` repository contents are provided under the [MIT Licence](https://github.com/benweston/blog-source/blob/main/LICENSE).   
+The `blog-source` repository is open source and provided under the [MIT Licence](https://github.com/benweston/blog-source/blob/main/LICENSE).   
 
 </div>
