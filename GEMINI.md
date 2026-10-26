@@ -44,13 +44,15 @@ blog-source/
 │   ├── icons/              # Logos, badges, and iconography
 │   ├── misc/               # Miscellaneous asset files
 │   └── screenshots/        # Project, CLI, and UI screenshots
-├── docs/                   # Project documentation (if applicable)
-│   └── wiki/               # Canonical Markdown source for GitHub Wiki
+├── docs/                   # Project documentation & publishing guides
+│   ├── authoring-and-publishing.md # Setup, frontmatter reference, and Hashnode publishing guide
+│   ├── README.md           # Documentation index
+│   └── wiki/               # Canonical Markdown source for GitHub Wiki (if applicable)
 ├── posts/                  # Canonical Markdown blog posts published to Hashnode
 │   └── example-post.md     # Template/example post with YAML frontmatter
 ├── .gitignore              # Git ignore rules for POSIX/Linux, Sublime Text, and secrets
 ├── GEMINI.md               # Persistent agent guidelines and project context
-└── README.md               # Repository documentation and frontmatter reference
+└── README.md               # Repository overview and documentation links
 ```
 
 ---
